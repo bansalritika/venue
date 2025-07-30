@@ -20,24 +20,27 @@ function HomePage() {
           <a href="#"><img src="/logo.png" alt="Logo" /></a>
         </div>
 
-        <button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+        
 
-        <ul className={`navbar-nav ${menuOpen ? 'active' : ''}`}>
-          <li className="nav-item"><a className="nav-link" href="#">Venue</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Vendors</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Real Events</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Ideas</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">Corporate Gifting</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">E-Invites</a></li>
-        </ul>
+      <ul className={`navbar-nav ${menuOpen ? 'active' : ''}`}>
+  <div className="close-btn" onClick={() => setMenuOpen(false)}>×</div>
+  <li className="nav-item"><a className="nav-link" href="#">Venue</a></li>
+  <li className="nav-item"><a className="nav-link" href="#">Vendors</a></li>
+  <li className="nav-item"><a className="nav-link" href="#">Real Events</a></li>
+  <li className="nav-item"><a className="nav-link" href="#">Ideas</a></li>
+  <li className="nav-item"><a className="nav-link" href="#">Corporate Gifting</a></li>
+  <li className="nav-item"><a className="nav-link" href="#">E-Invites</a></li>
+</ul>
+
 
         <div className="navbar-end">
-          <img src="https://flagcdn.com/in.svg" alt="India" width="24" />
-          <select className="form-select form-select-sm" style={{ width: '120px' }}>
-            <option>All Cities</option>
-          </select>
-          <button className="btn btn-warning btn-sm">Log In</button>
-        </div>
+  <img src="https://flagcdn.com/in.svg" alt="India" width="24" />
+  <select className="form-select form-select-sm">
+    <option>All Cities</option>
+  </select>
+  <button className="btn btn-warning btn-sm">Log In</button>
+</div>
+<button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
       </nav>
 
       {/* Hero Section */}

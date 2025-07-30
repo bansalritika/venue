@@ -132,18 +132,59 @@
   background-color: #e6b800;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem;
   }
 
-  .navbar-toggle {
-    display: block;
-    z-index: 20;
+  .navbar-brand {
+    flex: 1;
   }
 
+  .navbar-toggle {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 20;
+    margin-left: auto;
+  }
+
+  /* ✅ Make navbar-end visible on mobile */
+  .navbar-end {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1rem;
+  }
+
+  .navbar-end img {
+    height: 20px;
+  }
+
+  .navbar-end select {
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  .navbar-end .btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: #FFD700;
+    font-weight: 600;
+    border: none;
+  }
+
+  /* Mobile menu (hamburger sidebar) */
+  .navbar-nav,
   .custom-navbar .navbar-nav {
     position: fixed;
     top: 0;
@@ -161,39 +202,20 @@
     z-index: 15;
   }
 
+  .navbar-nav.active,
   .custom-navbar .navbar-nav.active {
     transform: translateX(0);
   }
 
+  .navbar-nav .nav-item,
   .custom-navbar .nav-item {
     width: 100%;
   }
 
+  .navbar-nav .nav-link,
   .custom-navbar .nav-link {
     font-size: 18px;
     width: 100%;
-  }
-
-  .navbar-end {
-    display: none;
-  }
-
-  .mobile-navbar-end {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: auto;
-  }
-
-  .mobile-navbar-end .btn {
-    width: 100%;
-    background-color: #FFD700;
-    border-radius: 8px;
-    padding: 10px 0;
-    font-weight: bold;
-    text-align: center;
-    color: black;
   }
 
   .close-btn {
@@ -205,6 +227,7 @@
     margin-bottom: 1rem;
   }
 
+  /* Responsive search */
   .custom-search-bar {
     flex-direction: column;
     align-items: stretch;
@@ -226,75 +249,9 @@
   .custom-divider {
     display: none;
   }
-}
 
-@media (max-width: 768px) {
-  .custom-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-
-  .navbar-brand {
-    flex: 1;
-  }
-
-  .navbar-end {
-    order: 1;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .navbar-toggle {
-    order: 2;
-    display: block;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-
-  .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    width: 80%;
-    max-width: 320px;
-    z-index: 15;
-  }
-
-  .navbar-nav.active {
-    transform: translateX(0);
-  }
-
-  .navbar-nav .nav-item {
-    width: 100%;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 18px;
-    width: 100%;
-  }
-
-  .close-btn {
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    align-self: flex-end;
-    cursor: pointer;
-    margin-bottom: 1rem;
+  /* Optional: Hide mobile-navbar-end if you still had it */
+  .mobile-navbar-end {
+    display: none;
   }
 }
-
-
