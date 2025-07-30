@@ -1,0 +1,240 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+/* Container */
+.step-popup-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1100px;
+  height: 90vh;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Panel */
+.step-left-panel {
+  width: 40%;
+  background-image: url('/balloon.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.step-left-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.step-left-overlay h2,
+.step-left-overlay p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin: 5px 0;
+}
+
+/* Step List */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-circle.active {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.step-text .step-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #555;
+}
+
+.step-text .step-subtitle {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Right Panel */
+.step-right-panel {
+  width: 60%;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.step-right-panel h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Dropdown */
+.dropdown {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 8px 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.dropdown input {
+  background-color: #f0f0f0;
+  border: none;
+  outline: none;
+  color: #333;
+  font-weight: 500;
+  flex: 1;
+}
+
+.dropdown-icon {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Occasion Cards */
+.occasion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+
+.occasion-card {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.occasion-card:hover {
+  border-color: #FFD700;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.occasion-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.occasion-card p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Next Button */
+.next-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.next-btn {
+  background-color: #FFD700;
+  color: black;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .step-popup-container {
+    flex-direction: column;
+    height: auto;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .step-left-panel,
+  .step-right-panel {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .step-right-panel {
+    padding: 20px 20px 30px;
+  }
+
+  .occasion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .occasion-grid {
+    grid-template-columns: 1fr;
+  }
+}

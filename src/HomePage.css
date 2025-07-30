@@ -1,0 +1,300 @@
+/* Navbar */
+.custom-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(6px);
+}
+
+.custom-navbar .navbar-brand img {
+  height: 50px;
+  margin-left: 10px;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Nav Links (Desktop) */
+.custom-navbar .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-navbar .nav-link {
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #FFD700 !important;
+}
+
+.navbar-end {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-end .btn {
+  background-color: #FFD700;
+  border: none;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 6px 12px;
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background: url('/wedding-banner.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Section */
+.custom-search-wrapper {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.custom-search-bar {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  max-width: 1000px;
+  width: 100%;
+}
+
+.custom-input {
+  flex: 1;
+  padding: 16px;
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.custom-divider {
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+.custom-search-btn {
+  background-color: #f7c600;
+  border: none;
+  padding: 16px 24px;
+  font-weight: 600;
+  color: #000;
+  font-size: 16px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.custom-search-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .navbar-toggle {
+    display: block;
+    z-index: 20;
+  }
+
+  .custom-navbar .navbar-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    width: 80%;
+    max-width: 320px;
+    z-index: 15;
+  }
+
+  .custom-navbar .navbar-nav.active {
+    transform: translateX(0);
+  }
+
+  .custom-navbar .nav-item {
+    width: 100%;
+  }
+
+  .custom-navbar .nav-link {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .navbar-end {
+    display: none;
+  }
+
+  .mobile-navbar-end {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .mobile-navbar-end .btn {
+    width: 100%;
+    background-color: #FFD700;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+  }
+
+  .close-btn {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  .custom-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .custom-search-btn {
+    border-radius: 8px;
+    width: 100%;
+    padding: 12px;
+  }
+
+  .custom-input {
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .custom-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-brand {
+    flex: 1;
+  }
+
+  .navbar-end {
+    order: 1;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .navbar-toggle {
+    order: 2;
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .navbar-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    width: 80%;
+    max-width: 320px;
+    z-index: 15;
+  }
+
+  .navbar-nav.active {
+    transform: translateX(0);
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .close-btn {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+}
+
+

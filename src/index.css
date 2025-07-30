@@ -1,0 +1,17 @@
+/* Make body and html full width & remove scroll glitch */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+
+/* Force any container to not exceed screen */
+* {
+  box-sizing: border-box;
+}
